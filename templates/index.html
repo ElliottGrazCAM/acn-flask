@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Association of Consultants to Nonprofits</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
   <!-- Top Utility Bar -->
   <div class="top-utility-bar">
     <div class="container">
       <div class="site-brand">
-        <img src="/images/logo.png" alt="ACN Logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="ACN Logo">
         <span class="tagline">Building on 30 Years of Success</span>
       </div>
       <div class="utility-links">
@@ -28,246 +28,53 @@
     <nav class="main-nav">
       <ul>
         <li><a href="/">Home</a></li>
-        <li class="dropdown">
-          <a href="/about">About</a>
-          <ul class="dropdown-menu">
-            <li><a href="/about/vision">Vision-Purpose-Values</a></li>
-            <li><a href="/about/code-of-conduct">Code of Conduct</a></li>
-            <li><a href="/about/dei-commitment">DEI Commitment</a></li>
-            <li><a href="/about/leadership">Leadership</a></li>
-            <li><a href="/about/committees">Committees</a></li>
-            <li><a href="/about/ambassadors">Ambassador Program</a></li>
-            <li><a href="/about/partners">ACN Partners</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="/consultants">Find a Consultant</a>
-          <ul class="dropdown-menu">
-            <li><a href="/consultants/directory">Directory</a></li>
-            <li><a href="/consultants/rfp">Submit A RFP</a></li>
-            <li><a href="/consultants/working-with">Working with Consultants</a></li>
-            <li><a href="/consultants/speakers">Find a Speaker</a></li>
-            <li><a href="/consultants/webinars">Webinar Topics for Nonprofits</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="/events">Events</a>
-          <ul class="dropdown-menu">
-            <li><a href="/events/calendar">Calendar</a></li>
-            <li><a href="/events/sponsors">Sponsors</a></li>
-          </ul>
-        </li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/join">Join</a></li>
-        <li><a href="/members">Members-Only Resources</a></li>
-        <li><a href="/donate">Donate</a></li>
+        <li><a href="/about">About ACN</a></li>
+        <li><a href="/consultants">Find a Consultant</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/members">Members</a></li>
+        <li><a href="/join">Join ACN</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-img-box">
-        <img src="/images/hero-panel.jpg" alt="ACN Hero Panel" />
-      </div>
-      <h1>A Community of Consultants Serving the Nonprofit Sector</h1>
-      <p>For more than 30 years, our members from around the U.S. and beyond have worked with local and national organizations in areas from Association Management to DEI and from Social Media to Strategic Planning.</p>
-      <a href="#events" class="btn">Find a Consultant</a>
-    </div>
-  </section>
-
-  <!-- Vision & Mission -->
-  <section class="intro">
-    <div class="container">
-      <h2>Vision & Mission</h2>
-      <div class="vm-row">
-        <div>
-          <strong>Vision:</strong> We envision a world where all organizations doing social impact work have the external expertise they need.
-        </div>
-        <div>
-          <strong>Mission:</strong> We raise the profile of consultants doing social impact work by providing members opportunities to build relationships and expand expertise.
-        </div>
-      </div>
-      <div class="vm-sub">
-        <p>We hope our site helps you <a href="/consultants/directory">find a consultant</a>, <a href="/consultants/rfp">submit an RFP</a>, learn about our <a href="/events">events</a>, or <a href="/contact">get advice</a>. New members build relationships and expand expertise.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Upcoming Events -->
-  <section class="events">
-    <div class="container">
-      <h2>Upcoming events</h2>
-      <ul>
-        <li><a href="#">ACN MONTHLY AI WORKGROUP</a><br>08/07/2025 10:00 AM • Zoom Webinar</li>
-        <li><a href="#">HOW TO INCREASE MONEY FOR PROGRAMS AND SERVICES WITHOUT RELYING ON A GRANT, EVENT OR CAMPAIGN</a><br>08/18/2025 10:00 AM • Virtual Webinar</li>
-        <li><a href="#">ACN MONTHLY AI WORKGROUP</a><br>09/04/2025 10:00 AM • Zoom Webinar</li>
-        <li><a href="#">GETTING AHEAD OF THE CURVE: HOW TO DEVELOP A PRACTICAL AI POLICY FOR YOUR NONPROFIT</a><br>09/08/2025 10:00 AM • Virtual Webinar</li>
-        <li><a href="#">ACN RESILIENCE IN PRACTICE SERIES: FUNDRAISING THROUGH THE STORM</a><br>09/10/2025 10:30 AM • Virtual Zoom Meeting</li>
-        <li><a href="#">CONNECT. COLLABORATE. CATALYZE. STRENGTHENING THE NONPROFIT ECOSYSTEM</a><br>10/16/2025 1:30 PM • Impact House | Chicago, IL</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Who We Are & Map -->
-  <section class="who-map-section">
-    <div class="container who-map-flex">
-      <div class="who-we-are">
-        <h2>Who We Are</h2>
-        <p>Sole practitioners, partnerships, and organizations may join. We are:</p>
-        <div class="features-table">
-          <div class="features-row">
-            <div class="feature-label"><strong>Experienced</strong></div>
-            <div class="feature-desc">The typical ACN member works with five clients per year on engagements ranging from day-long commitments to year-long projects.</div>
-          </div>
-          <div class="features-row">
-            <div class="feature-label"><strong>Committed</strong></div>
-            <div class="feature-desc">Members have an average of 10 years in their practice and 22 years in the nonprofit sector. We welcome those new to consulting with nonprofit experience.</div>
-          </div>
-          <div class="features-row">
-            <div class="feature-label"><strong>Collaborative</strong></div>
-            <div class="feature-desc">We collaborate with clients and colleagues to provide exceptional service throughout the nonprofit sector.</div>
-          </div>
-        </div>
-        <p class="who-extra">Our members work together to serve their clients and the nonprofit sector. From timely programming to pop-up events and online forums, we promote the highest caliber of collegiality across sectors.</p>
-      </div>
-      <div class="map-section">
-        <h2>Where To Find Us</h2>
-        <img src="/images/map.png" alt="ACN Member Locations Map">
-        <div class="map-caption">
-          ACN Members in 34 states<br>
-          Serving clients in all 50 states
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Members Area of Expertise (Tableau Embed) -->
-  <section class="members-expertise">
-    <div class="container">
-      <h2>Members’ Areas of Expertise</h2>
-      <div class="expertise-note">Scroll over chart to learn more.</div>
-      <div class="tableauPlaceholder" id="viz1753980662369" style="position: relative;">
-        <noscript>
-          <a href="#">
-            <img alt="ACN Membership Expertise" src="https://public.tableau.com/static/images/me/memberchart/ACNMembershipExpertise/1_rss.png" style="border: none;" />
-          </a>
-        </noscript>
-        <object class="tableauViz" style="display:none;">
-          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-          <param name="embed_code_version" value="3" />
-          <param name="site_root" value="" />
-          <param name="name" value="memberchart/ACNMembershipExpertise" />
-          <param name="tabs" value="no" />
-          <param name="toolbar" value="yes" />
-          <param name="static_image" value="https://public.tableau.com/static/images/me/memberchart/ACNMembershipExpertise/1.png" />
-          <param name="animate_transition" value="yes" />
-          <param name="display_static_image" value="yes" />
-          <param name="display_spinner" value="yes" />
-          <param name="display_overlay" value="yes" />
-          <param name="display_count" value="yes" />
-          <param name="language" value="en-US" />
-        </object>
-      </div>
-    </div>
-  </section>
-
-  <script type="text/javascript">
-    (function() {
-      var divElement = document.getElementById('viz1753980662369');
-      var vizElement = divElement.getElementsByTagName('object')[0];
-      function resizeViz() {
-        if (!vizElement) return;
-        if (divElement.offsetWidth > 800) {
-          vizElement.style.width = '800px';
-          vizElement.style.height = '500px';
-        } else if (divElement.offsetWidth > 500) {
-          vizElement.style.width = '100%';
-          vizElement.style.height = '500px';
-        } else {
-          vizElement.style.width = '100%';
-          vizElement.style.height = '400px';
-        }
-      }
-      resizeViz();
-      window.addEventListener('resize', resizeViz);
-      var scriptElement = document.createElement('script');
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    })();
-  </script>
-
-  <!-- Directory CTA -->
-  <section class="directory-cta">
-    <div class="container">
-      <a href="/consultants/directory" class="btn hero-btn">SEARCH OUR NONPROFIT CONSULTANT DIRECTORY</a>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>What our members say</h2>
-      <div class="testimonial-item">
-        <div class="testimonial-image">
-          <img src="/images/amy.png" alt="Amy Wishnick">
-        </div>
-        <div class="testimonial-text">
-          <blockquote>
-            <p>“Since joining ACN, I have reaped many benefits. ACN has afforded me the opportunity to be more visible and to increase my reach as a consultant. Being part of a smart, dedicated community of colleagues, as well as my experience on the board of directors and as association president, have also been enriching. Being involved makes all the difference.”</p>
-            <cite>Amy Wishnick</cite>
-            <div class="testimonial-company">Wishnick &amp; Associates, LLC</div>
-          </blockquote>
-        </div>
-      </div>
+    <img src="{{ url_for('static', filename='images/hero-panel.jpg') }}" alt="Hero Panel">
+    <div class="hero-content">
+      <h1>Empowering Nonprofits Through Collaboration</h1>
+      <p>Your trusted partner for nonprofit consulting and solutions.</p>
+      <a class="cta-btn" href="/consultants">Find a Consultant</a>
     </div>
   </section>
 
   <!-- Partners -->
   <section class="partners">
-    <div class="container">
-      <h2>ACN Partners</h2>
-      <div class="partner-logos">
-        <img src="/images/partner-forefront.png" alt="Forefront Partner Logo">
-        <img src="/images/instrument.png" alt="Instrument Partner Logo">
-        <img src="/images/learning.png" alt="Nonprofit Learning Lab Partner Logo">
-        <img src="/images/webadvisor.png" alt="NonprofitWebAdvisor Partner Logo">
-        <img src="/images/tlogo.png" alt="Tlogo Partner Logo">
-      </div>
-      <div class="partners-caption">
-        Please join us in thanking these resources and partners that help make ACN better for our consultants!
-      </div>
+    <h2>Our Partners</h2>
+    <div class="partner-logos">
+      <img src="{{ url_for('static', filename='images/partner-forefront.png') }}" alt="Partner Forefront">
+      <img src="{{ url_for('static', filename='images/webadvisor.png') }}" alt="WebAdvisor">
+      <!-- Add more partner logos here if needed -->
     </div>
   </section>
 
-  <!-- Sponsor CTA -->
-  <section class="sponsor-cta">
-    <div class="container">
-      <h2>Make an impact, become an ACN sponsor</h2>
-      <p>ACN has a variety of event sponsorship packages at varying investment levels. <a href="/events/sponsors" class="btn">Learn more about ACN sponsorships.</a></p>
+  <!-- Featured Section -->
+  <section class="featured">
+    <h2>Featured Consultants & Resources</h2>
+    <div class="featured-items">
+      <img src="{{ url_for('static', filename='images/amy.png') }}" alt="Amy">
+      <img src="{{ url_for('static', filename='images/instrument.png') }}" alt="Instrument">
+      <img src="{{ url_for('static', filename='images/learning.png') }}" alt="Learning">
+      <img src="{{ url_for('static', filename='images/map.png') }}" alt="Map">
+      <img src="{{ url_for('static', filename='images/Tlogo.png') }}" alt="T Logo">
     </div>
   </section>
-
-  <!-- Footer Buttons -->
-  <div class="footer-btns">
-    <a href="/join-list" class="btn footer-btn">Join Our List!</a>
-    <a href="/consultants/rfp" class="btn footer-btn">Submit an RFP</a>
-    <a href="/join" class="btn footer-btn">Become a Member</a>
-    <a href="/contact" class="btn footer-btn">Contact Us</a>
-  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>The Association of Consultants to Nonprofits | 400 E. Randolph St., #3115, Chicago, IL 60601</p>
-      <ul class="footer-links">
-        <li><a href="/privacy-policy">Privacy Policy</a></li>
-      </ul>
-      <p>&copy; 2025 ACN. Powered by <a href="https://www.wildapricot.com">Wild Apricot</a></p>
+      <p>&copy; 2025 Association of Consultants to Nonprofits. All rights reserved.</p>
     </div>
   </footer>
-
-  <script src="/js/app.js"></script>
 </body>
 </html>
