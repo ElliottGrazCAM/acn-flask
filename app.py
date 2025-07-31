@@ -30,7 +30,8 @@ def load_user(user_id):
 # Routes
 @app.route('/')
 def home():
-    return "Welcome to the ACN Members Backend! Go to /register or /login."
+    return render_template('index.html')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
