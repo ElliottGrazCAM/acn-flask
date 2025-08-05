@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard | ACN{% endblock %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<ul>
+  <li><a href="{{ url_for('admin.members') }}">Manage Members</a></li>
+  <!-- Add links to manage events, blog, etc. as you add features -->
+</ul>
+{% endblock %}

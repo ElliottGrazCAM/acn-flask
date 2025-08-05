@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Home | ACN{% endblock %}
+{% block content %}
+<section class="hero" style="background: url('{{ url_for('static', filename='images/hero.png') }}') no-repeat center center/cover; color:#fff; padding:5rem 0 3rem 0; text-align:center;">
+  <h1>Welcome to ACN!</h1>
+  <p>The Association of Consultants to Nonprofits</p>
+</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+<header>
+  <div class="container flex-row flex-center" style="justify-content: space-between;">
+    <a href="{{ url_for('index') }}" class="logo">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="ACN Logo" style="height:56px; vertical-align:middle;">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        {% if current_user.is_authenticated and current_user.is_admin %}
+          <li><a href="{{ url_for('admin.dashboard') }}">Admin</a></li>
+        {% endif %}
+        {% if not current_user.is_authenticated %}
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% else %}
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</header>

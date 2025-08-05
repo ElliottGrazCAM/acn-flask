@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Profile | ACN{% endblock %}
+{% block content %}
+<div class="auth-container">
+  <h2>My Profile</h2>
+  <p><b>Name:</b> {{ user.name }}</p>
+  <p><b>Email:</b> {{ user.email }}</p>
+  <p><b>Username:</b> {{ user.username }}</p>
+  <img src="{{ url_for('static', filename='images/' + (user.image or 'default-profile.png')) }}" alt="Profile Image" style="max-width:120px;">
+</div>
+{% endblock %}
